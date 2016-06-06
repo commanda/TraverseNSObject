@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		37CA44941D0611F800294084 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CA44931D0611F800294084 /* main.m */; };
+		37CA449C1D06132400294084 /* AWTraverseCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 37CA449B1D06132400294084 /* AWTraverseCollection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		37CA44901D0611F800294084 /* TraverseCollection */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TraverseCollection; sourceTree = BUILT_PRODUCTS_DIR; };
 		37CA44931D0611F800294084 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		37CA449A1D06132400294084 /* AWTraverseCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWTraverseCollection.h; sourceTree = "<group>"; };
+		37CA449B1D06132400294084 /* AWTraverseCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWTraverseCollection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				37CA44931D0611F800294084 /* main.m */,
+				37CA449A1D06132400294084 /* AWTraverseCollection.h */,
+				37CA449B1D06132400294084 /* AWTraverseCollection.m */,
 			);
 			path = TraverseCollection;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37CA44941D0611F800294084 /* main.m in Sources */,
+				37CA449C1D06132400294084 /* AWTraverseCollection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
