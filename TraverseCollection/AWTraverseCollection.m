@@ -11,18 +11,27 @@
 
 + (void)traverseCollection:(NSObject *)collection applyBlockToLeaves:(ApplyToLeaf)block
 {
+    [self traverseCollection:collection applyBlockToLeaves:block currentKey:nil currentParent:nil];
+}
+
++ (void)traverseCollection:(NSObject *)collection applyBlockToLeaves:(ApplyToLeaf)block currentKey:(id)key currentParent:(NSObject *)parent
+{
     if ([collection isKindOfClass:[NSDictionary class]])
     {
-        for (NSString* value in [(NSDictionary *)collection allValues])
+        NSDictionary *dictionary = (NSDictionary *)collection;
+        for (NSString *key in [dictionary allKeys])
         {
-            [self traverseCollection:value applyBlockToLeaves:block];
+            NSObject *value = dictionary[key];
+            [self traverseCollection:value applyBlockToLeaves:block currentKey:key currentParent:dictionary];
         }
     }
     else if ([collection isKindOfClass:[NSArray class]])
     {
-        for (id child in (NSArray *)collection)
+        NSArray *array = (NSArray *)collection;
+        for (int index = 0; index < array.count; index++)
         {
-            [self traverseCollection:child applyBlockToLeaves:block];
+            NSObject *item = array[index];
+            [self traverseCollection:item applyBlockToLeaves:block currentKey:@(index) currentParent:array];
         }
     }
     else
@@ -30,7 +39,7 @@
         // We found a leaf
         if(block)
         {
-            block(collection);
+            block(collection, key, parent);
         }
     }
 }

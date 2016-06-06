@@ -7,7 +7,10 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^ApplyToLeaf)(id leaf);
+// @param leaf The leaf object
+// @param key The key in this leaf's parent dictionary, if the parent is a dictionary. If its parent is an array, this will be its index as an NSNumber.
+// @param parent The leaf's parent, for context
+typedef void (^ApplyToLeaf)(id leaf, id key, NSObject *parent);
 
 @interface AWTraverseCollection : NSObject
 

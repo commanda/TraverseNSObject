@@ -12,7 +12,7 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
+        
         NSString *filename = [NSString stringWithCString:argv[1] encoding:NSUTF8StringEncoding];
         NSData *fileData = [NSData dataWithContentsOfFile:filename];
         
@@ -29,10 +29,9 @@ int main(int argc, const char * argv[]) {
             return 1;
         }
         
-        [AWTraverseCollection traverseCollection:collection applyBlockToLeaves:^(id leaf){
-            NSLog(@"leaf: %@", leaf);
+        [AWTraverseCollection traverseCollection:collection applyBlockToLeaves:^(id leaf, id key, NSObject *parent){
+            NSLog(@"key: %@, leaf: %@", key, leaf);
         }];
-        
     }
     return 0;
 }
